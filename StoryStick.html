@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Story Stick</title>
+    <link rel="stylesheet" href="StoryStick.css" />
+  </head>
+  <body>
+    <h1>Story Stick</h1>
+
+    <div id="inputId">
+      <br />
+      Tile width in inches: <input id="widthId" type="number" />
+      <br />
+      Fraction: <input id="fractionId" type="text" placeholder="e.g. 1/2" />
+    </div>
+
+    <div id="storyStickId">
+      <p>How many tiles do you want on your story stick?</p>
+      <input id="numberOfTilesId" type="number" />
+      <p>Select a grout joint size</p>
+      <select id="groutJointId">
+        <option value="0">1/64"</option>
+        <option value="1">1/32"</option>
+        <option value="2">1/16"</option>
+        <option value="3">1/8"</option>
+        <option value="4">3/16"</option>
+        <option value="5">1/4"</option>
+        <option value="6">3/8"</option>
+        <option value="7">1/2"</option>
+      </select>
+      <p>Select a thinset build-up size</p>
+      <select id="thinsetId">
+        <option value="0">1/64"</option>
+        <option value="1">1/32"</option>
+        <option value="2">1/16"</option>
+        <option value="3">1/8"</option>
+        <option value="4">3/16"</option>
+        <option value="5">1/4"</option>
+        <option value="6">3/8"</option>
+        <option value="7">1/2"</option>
+      </select>
+      <p>Thinset build-up interval (iterations)</p>
+      <input id="thinsetInterval" type="number" />
+      <br />
+      <input type="button" value="Submit" id="calculateButton" />
+    </div>
+
+    <script src="StoryStick.js"></script>
+  </body>
+</html>
