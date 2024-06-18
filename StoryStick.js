@@ -105,6 +105,10 @@ function storyStick() {
 
   let accumulatedMeasurement = 0;
 
+  // Clear previous results
+  const resultDiv = document.getElementById("result");
+  resultDiv.innerHTML = "";
+
   for (let i = 1; i <= tileCount; i++) {
     accumulatedMeasurement += tileWidth + groutJoint;
 
@@ -113,7 +117,11 @@ function storyStick() {
     }
 
     const result = decimalToTapeMeasureFraction(accumulatedMeasurement);
-    console.log(result);
+
+    // Display the result on the page
+    const resultItem = document.createElement("p");
+    resultItem.textContent = result;
+    resultDiv.appendChild(resultItem);
   }
 }
 
