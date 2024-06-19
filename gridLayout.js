@@ -24,7 +24,7 @@ function calculateGrid() {
     const gridSize = totalSize * i;
     const result = decimalToTapeMeasureFraction(gridSize);
     const resultElement = document.createElement("p");
-    resultElement.textContent = `Grid ${i}: ${result}`;
+    resultElement.textContent = result;
     resultsDiv.appendChild(resultElement);
   }
 }
