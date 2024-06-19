@@ -5,10 +5,12 @@ document
 function calculateGrid() {
   const tileWidthInput = document.getElementById("tileWidth").value;
   const tileWidth = parseInchesAndFraction(tileWidthInput);
-  const groutJointSize = parseFraction(
+  const groutJointSize = parseFractionOrDecimal(
     document.getElementById("groutJointSize").value
   );
-  const modifier = parseFraction(document.getElementById("modifier").value);
+  const modifier = parseFractionOrDecimal(
+    document.getElementById("modifier").value
+  );
   const numTiles = parseInt(document.getElementById("numTiles").value);
   const numGrids = parseInt(document.getElementById("numGrids").value);
 
@@ -33,6 +35,15 @@ function parseFraction(fraction) {
   return numerator / denominator;
 }
 
+function parseFractionOrDecimal(input) {
+  if (!input) return 0;
+  if (input.includes("/")) {
+    return parseFraction(input);
+  } else {
+    return parseFloat(input);
+  }
+}
+
 function parseInchesAndFraction(input) {
   if (!input) return 0;
   const parts = input.split(" ");
@@ -40,10 +51,10 @@ function parseInchesAndFraction(input) {
   let fraction = 0;
   if (parts.length === 2) {
     inches = parseFloat(parts[0]);
-    fraction = parseFraction(parts[1]);
+    fraction = parseFractionOrDecimal(parts[1]);
   } else if (parts.length === 1) {
     if (parts[0].includes("/")) {
-      fraction = parseFraction(parts[0]);
+      fraction = parseFractionOrDecimal(parts[0]);
     } else {
       inches = parseFloat(parts[0]);
     }
