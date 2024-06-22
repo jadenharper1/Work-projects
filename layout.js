@@ -37,10 +37,19 @@ function parseFraction(fraction) {
 
 function parseFractionOrDecimal(input) {
   if (!input) return 0;
+
+  const plusIndex = input.indexOf("+");
+  let plusFraction = 0;
+  if (plusIndex !== -1) {
+    const plusCount = input.length - plusIndex;
+    input = input.slice(0, plusIndex);
+    plusFraction = plusCount / 64;
+  }
+
   if (input.includes("/")) {
-    return parseFraction(input);
+    return parseFraction(input) + plusFraction;
   } else {
-    return parseFloat(input);
+    return parseFloat(input) + plusFraction;
   }
 }
 
