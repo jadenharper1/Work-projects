@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../../../coding/Personal projects"
+	},
+	{
+		"path": "../Personal projects"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Personal projects"
+  }
+}
